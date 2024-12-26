@@ -1,19 +1,27 @@
 <template>
     <Head title=" | Home" />
-    <div class="bg-lime-300 text-center mb-3 -mt-3">
-        <h1 class="text-3xl font-bold p-6">NATCEP-Accredited and Endorsed In-Person NURSE AIDE/ASSISTANT (CNA) Training Courses</h1>
-        <!-- New div for paragraph spanning two columns -->
-    <div class="flex flex-wrap mx-2 mb-4 justify-center">
-        <div class="flex-none w-full md:w-2/3 mb-2 md:mb-4 p-4 mx-2 bg-white rounded-lg shadow-md min-w-[220px]">
-            <p class="mt-2 text-xl text-bold pb-3 text-balance">Welcome to Above and Beyond Care. Our certified Caregiver Courses are assessed, audited, 
-                and designed to fit seamlessly into your busy lifestyle. Our comprehensive program features 13 essential modules, 
-                each tailored to enhance your expertise and confidence in delivering exceptional patient care. Covering everything 
-                from foundational nursing skills to specialized patient handling techniques, our course prepares aspiring 
-                caregivers with the knowledge and practical skills needed for this vital role. Whether you’re beginning a new 
-                career or looking to enhance your existing skills, our Caregiver course will guide you toward a fulfilling 
-                path in the healthcare industry.</p>
+    
+    <div class="relative w-full h-[80vh] bg-cover bg-center bg-no-repeat sm:min-h-[400px] md:min-h-[400px] lg:min-h-[400px] bg-[url('path/to/your/image.jpg')] md:bg-[url('path/to/your/large/image.jpg')]" :style="currentImageStyle"> 
+        <!-- replace h-[80vh]  with h-screen  for larger image -->    
+        <div class="absolute inset-0 bg-black opacity-40"></div> <!-- Overlay -->
+        
+        <!-- Adjust the text positioning -->
+        <div class="absolute top-10 left-0 right-0 flex flex-col items-center justify-center text-center opacity-90 p-6"> 
+            <h1 class="text-5xl font-bold text-white">Career Education in Healthcare</h1>
+            <h2 class="text-3xl font-bold text-white">Discover how to go Above and Beyond in your HealthCare Training” Governing Bodies include DOE/DOL/NJDOH/NJBON</h2>
         </div>
-    </div>
+
+        <!-- Navigation Arrows -->
+        <div class="absolute left-1 top-1/2 transform -translate-y-1/2 z-20">
+            <button @click="changeImage(-1)" class="p-4 text-white bg-black bg-opacity-50 hover:bg-opacity-75 transition text-4xl">
+                &lt; <!-- Left Arrow -->
+            </button>
+        </div>
+        <div class="absolute right-1 top-1/2 transform -translate-y-1/2 z-20">
+            <button @click="changeImage(1)" class="p-4 text-white bg-black bg-opacity-50 hover:bg-opacity-75 transition text-4xl">
+                &gt; <!-- Right Arrow -->
+            </button>
+        </div>
     </div>
 
         <div class="flex flex-wrap mx-2 justify-center">
@@ -28,20 +36,15 @@
                     <div class="w-full md:w-2/3 bg-lime-300 flex flex-col justify-between mb-4 md:mb-0">
                         <img class="w-full h-72 object-cover"  :src="cna_group"  alt="CNA" />
                         <div class="p-4 flex-grow">
-                            <h2 class="text-xl font-bold">NURSE AIDE/ASSISTANT TRAINING (CNA)</h2> 
+                            <h2 class="text-xl font-bold">NURSE AIDE TRAINING</h2> 
                             <hr class="border-t-2 border-black">
                             <div class="pt-3">
                                 <ul>
-                                    <li><strong>Total Program Duration:</strong> 90 hours
-                                        <ul>
-                                            <li><strong>Classroom Hours:</strong> 50</li>
-                                            <li><strong>Clinical Hours:</strong> 40</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>State Exam Passing Rate:</strong> 100%</li>
-                                    <li><strong>Payment:</strong> Affordable with payment plan </li>
-                                    <li><strong>Job Placement:</strong> Assistance provided</li>
-                                    <li><strong>Supplies Included in Tuition</strong> </li>
+                                    <li>&#10145; <strong>Duration:</strong> 90 hours (Classroom + Clinical)</li>
+                                    <li>&#10145; <strong>Payment:</strong> Affordable with payment plan </li>
+                                    <li>&#10145; <strong>Job Placement:</strong> Assistance provided</li>
+                                    <li>&#10145; <strong>Supplies Included in Tuition</strong> </li>
+                                    <li>&#10145; <strong>Certification candidates must successfully complete the Nurse Aide in Long Term Care Facilities Training and Competency Evaluation Program (NATCEP)</strong> </li>
                                 </ul>
 
 
@@ -53,17 +56,17 @@
                     <div class="w-full md:w-2/3 bg-orange-300 flex flex-col justify-between">
                         <img class="w-full h-72 object-cover" :src="HHA" alt="HHA" />
                         <div class="p-4 flex-grow">
-                            <h2 class="text-xl font-bold">HOME HEALTH AIDE TRAINING (CHHHA)</h2>
+                            <h2 class="text-xl font-bold">HOME HEALTH AIDE TRAINING</h2>
                             <hr class="border-t-2 border-black">
                             <div class="pt-3">
                                 <ul>
-                                    <li>&#10145; 3 Wks. 76 hrs. online/hybrid class</li>
+                                    <li>&#10145; <strong>Duration:</strong> 3Wks, 76Hrs</li>
+                                    <li>&#10145; Online/Hybrid. Self-Paced. Train from any location</li>
                                     <li>&#10145; Self-paced. Learn from home.</li>
-                                    <li>&#10145; 2 days skill practice on-site</li>
+                                    <li>&#10145; <strong>Mandatory:</strong> On-site 2 days skill practice</li>
                                     <li>&#10145; Affordable Tuition</li>
                                     <li>&#10145; Job Placement Available</li>
                                     <li>&#10145; Payment plans available.</li>
-                                    <li>&#10145; <strong>Reinstatement of License/Certificate.</strong></li>
                                 </ul>
 
                             </div>
@@ -87,9 +90,9 @@
 
                             <div class="pt-3">
                                 <ul>
-                                    <li>&#10145; 2 hrs. with Registered Pharmacist</li>
-                                    <li>&#10145; 25+ hrs. with Registered Nurse</li>
-                                    <li>&#10145; Skill site at a facility known for "Best Memory Care in U.S. News" and "Best Workplace"</li>
+                                    <li>&#10145; <strong>Duration:</strong> 35+ Hrs</li>
+                                    <li>&#10145; <strong>Mandatory:</strong> Med Pass in one of the Best Memory Care in U.S News and Best Workplace</li>
+                                    <li>&#10145; Program: Approved by New Jersey Department of Health (NJDOH) </li>
                                     <li>&#10145; Job Placement Available</li>
                                 </ul>
 
@@ -108,16 +111,12 @@
                             
                                 <div class="pt-3">
                                     <ul>
-                                        <li><strong>Basic Life Support BLS Training</strong> 
-                                            <ul>
-                                                <li>Teaches CPR and AED skills for prehospital and in-facility environments</li>
-                                                <li><strong>BLS for Healthcare Providers Course</strong> </li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>Get certified in Basic Life Support with our online BLS certification.</strong> </li>
-                                        <li>Expert-led classes cover CPR, AED, and choking techniques. </li>
-                                        <li>Supplies Included in Tuition. </li>
-                                    </ul>
+                                    <li>&#10145; Monthly BLS/CPR/AED for Adults</li>
+                                    <li>&#10145; <strong>Mandatory:</strong> Med Pass in one of the Best Memory Care in U.S News and Best Workplace</li>
+                                    <li>&#10145; For Healthcare workers</li>
+                                    <li>&#10145; Monthly classes</li>
+                                    <li>&#10145; American Heart Association approved</li>
+                                </ul>
 
 
                                 </div>
@@ -152,10 +151,47 @@
 </template>
 
 <script setup>
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 
 const cna_group = new URL('../assets/images/cna_group.jpg', import.meta.url).href
 const HHA = new URL('../assets/images/HHA.jpg', import.meta.url).href
 const medical = new URL('../assets/images/medical.jpg', import.meta.url).href
 const bls = new URL('../assets/images/bls.jpg', import.meta.url).href
 
+
+// Array of background images
+const images = [
+    cna_group, // Image 1
+    HHA, // Image 2
+    medical, // Image 3
+    bls, // Image 4
+];
+
+// Reactive state for the current image index
+const currentImageIndex = ref(0);
+
+// Computed property for the current image style
+const currentImageStyle = computed(() => ({
+    backgroundImage: `url(${images[currentImageIndex.value]})`
+}));
+
+// Function to change the image based on the direction (1 for right, -1 for left)
+const changeImage = (direction) => {
+    currentImageIndex.value = (currentImageIndex.value + direction + images.length) % images.length;
+};
+
+// Change image every 3 seconds (automatically)
+let intervalId;
+
+onMounted(() => {
+    // Change the image every 3 seconds
+    intervalId = setInterval(() => {
+        changeImage(1); // Move to the next image automatically
+    }, 3000); // 3000ms = 3 seconds
+});
+
+onBeforeUnmount(() => {
+    // Clear the interval when the component is destroyed
+    clearInterval(intervalId);
+});
 </script>
